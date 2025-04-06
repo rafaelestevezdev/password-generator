@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Generador de contraseñas</title>
+    <!-- Enlace a la hoja de estilos CSS externa -->
+    <link rel="stylesheet" href="css/style.css">
+    <!-- Icono de la página que aparecerá en la pestaña del navegador -->
+    <link rel="icon" href="assets/icons/password-ico.png">
+</head>
+<body>
+    
+    <!-- Contenedor principal que engloba toda la aplicación -->
+    <div class="layout">
+        <!-- Título de la aplicación -->
+        <h2>Generador de contraseñas</h2>
+    
+        <!-- Contenedor para todos los elementos interactivos -->
+        <div class="container">
+          <!-- Sección donde se muestra la contraseña generada -->
+          <div class="contraseña-generada">
+            <!-- Campo de texto de solo lectura para mostrar la contraseña -->
+            <input type="text" id="output" placeholder="Tu contraseña aparecerá aquí" readonly>
+          </div>
+    
+          <!-- Sección de opciones para personalizar la contraseña -->
+          <fieldset class="opciones">
+            <legend>Opciones</legend>
+    
+            <!-- Control para seleccionar la longitud de la contraseña -->
+            <div class="longitud-container">
+              <label for="length">Longitud:</label>
+              <!-- Selector numérico con valores entre 4 y 30, valor predeterminado: 12 -->
+              <input type="number" id="length" min="4" max="30" value="12">
+            </div>
+            
+            <!-- Contenedor para las casillas de verificación de opciones -->
+            <div class="checkboxes-container">
+              <!-- Opción para incluir letras mayúsculas (activada por defecto) -->
+              <div class="checkbox-item">
+                <input type="checkbox" id="uppercase" checked>
+                <label for="uppercase">Mayúsculas</label>
+              </div>
+    
+              <!-- Opción para incluir letras minúsculas (activada por defecto) -->
+              <div class="checkbox-item">
+                <input type="checkbox" id="lowercase" checked>
+                <label for="lowercase">Minúsculas</label>
+              </div>
+    
+              <!-- Opción para incluir números (activada por defecto) -->
+              <div class="checkbox-item">
+                <input type="checkbox" id="numbers" checked>
+                <label for="numbers">Números</label>
+              </div>
+    
+              <!-- Opción para incluir símbolos (desactivada por defecto) -->
+              <div class="checkbox-item">
+                <input type="checkbox" id="symbols">
+                <label for="symbols">Símbolos</label>
+              </div>
+            </div>
+          </fieldset>
+    
+          <!-- Sección de botones para las acciones principales -->
+          <div class="botones">
+            <!-- Botón para generar una nueva contraseña según las opciones seleccionadas -->
+            <button class="btn-generador" id="generate">Generar contraseña</button>
+            <!-- Botón para copiar la contraseña generada al portapapeles -->
+            <button class="btn-copiar" id="copy">Copiar contraseña</button>
+          </div>
+        </div>
+      </div>
+    
+      <!-- Enlace al archivo JavaScript que maneja la funcionalidad de la aplicación -->
+      <script src="js/script.js"></script>
+</body>
+</html>

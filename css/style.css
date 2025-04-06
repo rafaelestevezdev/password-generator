@@ -1,0 +1,252 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Quicksand:wght@300..700&display=swap');
+
+:root {
+    /* Fondos - Tonos sutiles para una apariencia más profesional */
+    --color-bg: #f5f7fa;
+    --color-container: #ffffff;
+  
+    /* Texto - Colores mejorados para mejor legibilidad */
+    --color-text: #2d3748;
+    --color-subtext: #4a5568;
+  
+    /* Botones - Colores refinados con tonos más elegantes */
+    --color-primary: #90cdf4;    /* Azul suave */
+    --color-primary-hover: #63b3ed;
+    
+    --color-secondary: #fbd38d;  /* Ámbar suave */
+    --color-secondary-hover: #f6ad55;
+  
+    /* Inputs - Colores más sutiles y profesionales */
+    --color-input-bg: #f0f4f8;   /* Gris azulado muy claro */
+    --color-input-border: #e2e8f0;
+  
+    /* Éxito / alerta - Refinados para un look profesional */
+    --color-success: #c6f6d5;    /* Verde suave */
+    --color-error: #fed7d7;      /* Rojo suave */
+  
+    /* Bordes y sombras - Más sutiles */
+    --color-border: #e2e8f0;
+    --color-shadow: rgba(66, 83, 101, 0.06);
+    
+    /* Gradientes y acentos */
+    --gradient-bg: linear-gradient(135deg, #f5f7fa 0%, #eef1f5 100%);
+    --accent-glow: rgba(144, 205, 244, 0.2); /* Sutil resplandor basado en el color primario */
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    transition: all 0.3s ease;
+}
+
+body {
+    background-color: var(--color-bg);
+    background-image: var(--gradient-bg);
+    font-family: 'Quicksand', sans-serif;
+    color: var(--color-text);
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem;
+}
+
+/* NUEVO contenedor externo */
+.layout {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.5rem;
+    width: 100%;
+    max-width: 480px;
+}
+
+/* Título fuera del contenedor */
+h2 {
+    font-family: 'Quicksand', sans-serif;
+    font-size: 2.2rem;
+    font-weight: 600;
+    color: var(--color-text);
+    text-align: center;
+    letter-spacing: 0.5px;
+    margin-bottom: 0.5rem;
+    text-shadow: 1px 1px 1px rgba(255, 255, 255, 0.8);
+}
+
+/* Contenedor de la app */
+.container {
+    background-color: var(--color-container);
+    box-shadow: 0 10px 25px var(--color-shadow);
+    width: 100%;
+    border-radius: 16px;
+    border: 1px solid var(--color-border);
+    padding: 2.5rem;
+    backdrop-filter: blur(10px);
+}
+
+.contraseña-generada input {
+    width: 100%;
+    padding: 0.9rem 1rem;
+    font-size: 1.2rem;
+    border: 1px solid var(--color-input-border);
+    border-radius: 12px;
+    background-color: var(--color-input-bg);
+    color: var(--color-text);
+    margin-bottom: 2rem;
+    font-weight: 600;
+    text-align: center;
+    box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.03);
+    letter-spacing: 1px;
+}
+
+/* Estilos base para las opciones */
+.opciones {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    margin-bottom: 2rem;
+    border: 1px solid var(--color-input-border);
+    border-radius: 14px;
+    padding: 1.2rem;
+    background-color: rgba(255, 255, 255, 0.7);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.015);
+}
+
+/* Estilo para leyenda del fieldset */
+.opciones legend {
+    font-weight: 600;
+    padding: 0 10px;
+    color: var(--color-text);
+    font-size: 1rem;
+}
+
+/* Contenedor de longitud */
+.longitud-container {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    margin-bottom: 1rem;
+}
+
+.longitud-container label {
+    font-weight: 500;
+    font-size: 0.95rem;
+    color: var(--color-subtext);
+}
+
+/* Contenedor para checkboxes en línea */
+.checkboxes-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: space-between;
+}
+
+/* Cada item de checkbox */
+.checkbox-item {
+    flex: 1 0 45%;
+    display: flex;
+    align-items: center;
+    padding: 10px 14px;
+    background-color: var(--color-input-bg);
+    border-radius: 10px;
+    border: 1px solid var(--color-input-border);
+    transition: all 0.2s ease;
+    min-width: 120px;
+}
+
+.checkbox-item:hover {
+    background-color: rgba(255, 255, 255, 0.9);
+    transform: translateY(-2px);
+    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.03);
+    border-color: var(--color-primary);
+}
+
+/* Estilos para los checkboxes */
+.checkbox-item input[type="checkbox"] {
+    cursor: pointer;
+    width: 16px;
+    height: 16px;
+    accent-color: var(--color-primary);
+}
+
+.checkbox-item label {
+    cursor: pointer;
+    margin-left: 8px;
+    font-weight: 500;
+    font-size: 0.95rem;
+    color: var(--color-subtext);
+}
+
+/* Estilos para el input de número */
+.opciones input[type='number'] {
+    border-radius: 10px;
+    border: 1px solid var(--color-input-border);
+    padding: 0.8rem;
+    width: 100%;
+    font-size: 16px;
+    background-color: var(--color-input-bg);
+    box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.03);
+    color: var(--color-text);
+}
+
+.opciones input[type='number']:focus {
+    border-color: var(--color-primary);
+    box-shadow: 0 0 0 3px var(--accent-glow);
+}
+
+.botones {
+    display: flex;
+    gap: 12px;
+    justify-content: center;
+}
+
+.btn-generador, .btn-copiar {
+    font-size: 16px;
+    padding: 12px 22px;
+    border: none;
+    border-radius: 12px;
+    font-weight: 600;
+    cursor: pointer;
+    box-shadow: 0 4px 6px var(--color-shadow);
+    letter-spacing: 0.5px;
+    min-width: 140px;
+    transition: all 0.25s ease;
+}
+
+.btn-generador {
+    background-color: var(--color-primary);
+    color: #2c5282; /* Azul oscuro para contraste */
+}
+
+.btn-copiar {
+    background-color: var(--color-secondary);
+    color: #744210; /* Marrón oscuro para contraste */
+}
+
+.btn-generador:hover, .btn-copiar:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.08);
+}
+
+.btn-generador:hover {
+    background-color: var(--color-primary-hover);
+}
+
+.btn-copiar:hover {
+    background-color: var(--color-secondary-hover);
+}
+
+.btn-generador:active, .btn-copiar:active {
+    transform: translateY(0);
+    box-shadow: 0 2px 3px rgba(0, 0, 0, 0.1);
+}
+
+/* Añado un efecto de focus para accesibilidad */
+input:focus, button:focus {
+    outline: none;
+    box-shadow: 0 0 0 3px var(--accent-glow);
+}
+
